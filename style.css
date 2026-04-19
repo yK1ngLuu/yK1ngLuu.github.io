@@ -19,20 +19,7 @@ header {
 
 header h1 {
   color: hsl(0, 0%, 100%);
-  @keyframes glow {
-  from {
-    text-shadow: 
-      0 0 5px #ffffff,
-      0 0 10px #ffffff;
-  }
-  to {
-    text-shadow: 
-      0 0 15px #ffffff,
-      0 0 30px #ffffff;
-  }
 }
-    animation: glow 2s infinite alternate;
-    }
 
 body {
   font-family: 'Arial', sans-serif;
