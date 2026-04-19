@@ -1,0 +1,304 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== HEADER ===== */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+header h1 {
+  color: hsl(0, 0%, 100%);
+  @keyframes glow {
+  from {
+    text-shadow: 
+      0 0 5px #ffffff,
+      0 0 10px #ffffff;
+  }
+  to {
+    text-shadow: 
+      0 0 15px #ffffff,
+      0 0 30px #ffffff;
+  }
+}
+    animation: glow 2s infinite alternate;
+    }
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  overflow-x: hidden;
+}
+
+
+/* ===== NAV ===== */
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  position: relative;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #38bdf8;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ===== SECTIONS ===== */
+section {
+  padding: 80px 20px;
+  min-height: 100vh;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== BLUR SCROLL ===== */
+body.scrolling section {
+  filter: blur(2px);
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+/* ===== HOME ===== */
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.home h2 {
+  font-size: 2.5rem;
+}
+
+.home span {
+  color: #38bdf8;
+}
+
+/* ===== BOTÃO ===== */
+.btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  background: #38bdf8;
+  color: black;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #38bdf8;
+}
+
+.projects {
+  margin-top: 100px; /* aumenta espaço do título */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  z-index: 1;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.03); /* menos agressivo */
+  z-index: 10;
+}
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #020617;
+}
+
+section {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* CAMADA DAS PARTÍCULAS */
+#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* CADA PARTÍCULA */
+.particle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: rgb(0, 224, 253);
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: float linear infinite;
+}
+
+/* ANIMAÇÃO */
+@keyframes float {
+  from {
+    transform: translateY(100vh) scale(0.5);
+  }
+  to {
+    transform: translateY(-10vh) scale(1);
+  }
+}
+
+#projects h2 {
+  position: relative;
+  top: -20px;
+  margin-top: -60px;
+  padding-top: 20px;
+}
+
+#about {
+  margin-top: -200px;
+  padding-top: 20px;
+}
+
+#about h2 {
+  margin-bottom: 30px;
+}
+
+#contact {
+  margin-top: -60px;
+  padding-top: 20px;
+}
+
+/* SECTION GITHUB */
+#github {
+  padding-top: 40px; /* mais perto da section anterior */
+}
+
+/* TÍTULO */
+#github h2 {
+  margin-bottom: 30px; /* afasta do texto */
+}
+
+/* CAIXA */
+.github-box {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+/* LINK */
+.github-box a {
+  color: #38bdf8;
+  text-decoration: none;
+  display: block;
+  margin-top: 10px;
+}
+
+.github-box a:hover {
+  text-decoration: underline;
+}
+
+#github {
+  padding-top: 40px;
+}
+
+#github h2 {
+  margin-bottom: 30px;
+}
+
+.github-card {
+  text-align: center;
+}
+
+.github-card .btn {
+  margin-top: 15px;
+}
+
+/* Ícone centralizado */
+.github-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+/* Tamanho do ícone */
+.github-icon img {
+  width: 50px;
+  height: 50px;
+  filter: invert(1); /* deixa branco */
+  transition: 0.3s;
+}
+
+/* Efeito hover */
+.github-card:hover .github-icon img {
+  transform: scale(1.2);
+}
+
+#github {
+  padding: 40px 20px 80px;
+}
+
+#contact {
+  padding: 80px 20px;
+}
+
+.github-card {
+  max-width: 600px;   /* largura máxima */
+  margin: 0 auto;     /* centraliza */
+}
+
+#github h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #ffffff;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 
+      0 0 5px #ffffff,
+      0 0 10px #ffffff;
+  }
+  to {
+    text-shadow: 
+      0 0 15px #ffffff,
+      0 0 30px #ffffff;
+  }
+}
