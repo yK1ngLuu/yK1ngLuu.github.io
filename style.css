@@ -291,16 +291,3 @@ section {
   }
 }
 
-.btn {
-    background: #bf1dff;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 10px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: #ff1d8e;
-    box-shadow: 0 0 10px #ff1d8e;
-}
